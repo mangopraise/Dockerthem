@@ -32,8 +32,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ IMAGE_NAME }}:${{ TAG }}
+      run: docker build . --file Dockerfile --tag $IMAGE_NAME:$TAG
     - name: Publish the docker image
-      run: docker push ${{ IMAGE_NAME }}:${{ TAG }}
+      run: docker push $IMAGE_NAME:$TAG
      
        
