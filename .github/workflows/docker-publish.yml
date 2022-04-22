@@ -8,8 +8,8 @@ name: Docker
 on:
   #schedule:
     #- cron: '27 15 * * *'
-  push:
-    branches: [ main ]
+  #push:
+    #branches: [ main ]
     # Publish semver tags as releases.
     #tags: [ 'v*.*.*' ]
   pull_request:
@@ -21,7 +21,7 @@ env:
   # github.repository as <account>/<repo>
   #IMAGE_NAME: ${{ github.repository }}
   IMAGE_NAME: mangopraise/hellojason
-  TAG: today
+  TAG: late
   
 
 jobs:
