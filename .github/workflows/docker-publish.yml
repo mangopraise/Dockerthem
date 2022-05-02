@@ -22,7 +22,7 @@ env:
   # github.repository as <account>/<repo>
   #IMAGE_NAME: ${{ github.repository }}
   #IMAGE_NAME: mangopraise/hellojason
-  TAG: late
+  TAG: latest
 
 jobs:
   build_publish:
