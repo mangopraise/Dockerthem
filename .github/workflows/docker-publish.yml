@@ -26,12 +26,14 @@ jobs:
   build_publish:
 
     runs-on: ubuntu-latest
+    environment: Image_Name
       
     steps:
     - uses: actions/checkout@v3
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{IMAGE_NAME_ALL}}
+      run: docker build . --file Dockerfile 
+      --tag ${{IMAGE_NAME_ALL}}
       
     - name: Login to DockerHub
       uses: docker/login-action@v1
