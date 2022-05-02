@@ -16,7 +16,8 @@ on:
     branches: [ main ]
 
 env:
-  IMAGE_NAME: ${{ secrets.Image_Name_All }}
+  IMAGE_NAME: ${{ secrets.IMAGE_NAME_ALL }}
+  ENV_TEST: "testvalue"
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
@@ -31,6 +32,8 @@ jobs:
       
     steps:
     - uses: actions/checkout@v3
+    - name: testvar
+      run: echo "current testvar - ${ ENV_TEST }"
     - name: current secret
       run: echo "current secret - ${ IMAGE_NAME }"
     
