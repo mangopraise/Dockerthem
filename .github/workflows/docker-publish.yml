@@ -32,7 +32,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: current secret
-      run: echo "current secret == ${{ IMAGE_NAME }}"
+      run: echo "current secret - ${ IMAGE_NAME }"
     
     #- name: Build the Docker image
       #run: docker build . --file Dockerfile --tag $IMAGE_NAME:$TAG
