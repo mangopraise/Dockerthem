@@ -16,7 +16,7 @@ on:
     branches: [ main ]
 
 env:
-  IMAGE_NAME: ${{ secrets.IMAGE_NAME_ALL }}
+  #IMAGE_NAME: ${secrets.IMAGE_NAME_ALL}
   ENV_TEST: "testvalue"
   # Use docker.io for Docker Hub if empty
   #REGISTRY: docker.io
@@ -35,7 +35,7 @@ jobs:
     - name: testvar
       run: | 
         echo  ${ENV_TEST}
-        echo  ${IMAGE_NAME}
+        echo  ${{ secrets.IMAGE_NAME_ALL }}
      
     
     #- name: Build the Docker image
