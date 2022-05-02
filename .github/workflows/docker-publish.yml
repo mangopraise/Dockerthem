@@ -35,9 +35,9 @@ jobs:
     - name: testvar
       run: | 
         echo  ${ENV_TEST}
-        echo  $NAME
-      env:    
-        NAME: ${{ secrets.IMAGE_NAME }}
+        echo  ${{ secrets.IMAGE_NAME }}
+      #env:    
+        #NAME: ${{ secrets.IMAGE_NAME }}
      
     
     #- name: Build the Docker image
