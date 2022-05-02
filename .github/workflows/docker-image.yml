@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag hellojason:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{ secrets.Image_Name_All }}:$(date +%s)
