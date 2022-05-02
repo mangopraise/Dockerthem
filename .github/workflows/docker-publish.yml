@@ -16,11 +16,12 @@ on:
     branches: [ main ]
 
 env:
+  Image_Name: ${{ secrets.Image_Name_All }}
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
   #IMAGE_NAME: ${{ github.repository }}
-  IMAGE_NAME: mangopraise/hellojason
+  #IMAGE_NAME: mangopraise/hellojason
   TAG: today
   
 
