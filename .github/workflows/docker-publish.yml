@@ -34,12 +34,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: testvar
       run: | 
-        echo "current testvar - ${{ ENV_TEST }}"
-        echo "current secret - ${{ IMAGE_NAME }}"
-      env:
-        IMAGE_NAME: ${{ secrets.IMAGE_NAME_ALL }}
-        ENV_TEST: "testvalue"
- 
+        echo  ${ENV_TEST}
+        echo  ${IMAGE_NAME}
+     
     
     #- name: Build the Docker image
       #run: docker build . --file Dockerfile --tag $IMAGE_NAME:$TAG
