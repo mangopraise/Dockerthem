@@ -42,7 +42,7 @@ jobs:
     - name: Use the value
       id: step_two   
       run: |
-        echo "${{ env.IMAGE_NAME }}"
+        echo "${{ ENV.IMAGE_NAME }}"
       #env:    
         #NAME: ${{ secrets.IMAGE_NAME }}
      
