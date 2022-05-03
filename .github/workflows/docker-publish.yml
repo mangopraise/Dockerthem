@@ -37,7 +37,7 @@ jobs:
         echo  ${ENV_TEST}
     - name: set env
       id: step_one
-      run: echo "IMAGE_NAME=$(echo $IMAGE_NAME=1.5.6.9" >> $GITHUB_ENV 
+      run: echo "$IMAGE_NAME=1.5.6.9" >> $GITHUB_ENV 
     - name: Use the value
       id: step_two   
       run: echo  "${{ env.IMAGE_NAME }}"
