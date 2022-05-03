@@ -29,20 +29,30 @@ jobs:
   build_publish:
 
     runs-on: ubuntu-latest
-      
+    
     steps:
-    - uses: actions/checkout@v3
+    - name: Set the value
+      id: step_one
+      run: |
+        echo "action_state=yellow" >> $GITHUB_ENV
+    - name: Use the value
+      id: step_two
+      run: |
+        echo "${{ env.action_state }}" # This will output 'yellow'
+      
+    #steps:
+    #- uses: actions/checkout@v3
     #- name: testvar
       #run: | 
         #echo  ${ENV_TEST}
-    - name: set value
-      id: step_one
-      run: |
-        echo "$IMAGE_NAME=brown" >> $GITHUB_ENV 
-    - name: Use the value
-      id: step_two   
-      run: |
-        echo "${{ ENV.IMAGE_NAME }}"
+    #- name: set value
+      #id: step_one
+      #run: |
+        #echo "$IMAGE_NAME=brown" >> $GITHUB_ENV 
+    #- name: Use the value
+      #id: step_two   
+      #run: |
+        #echo "${{ ENV.IMAGE_NAME }}"
       #env:    
         #NAME: ${{ secrets.IMAGE_NAME }}
      
