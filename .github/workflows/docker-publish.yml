@@ -15,9 +15,9 @@ on:
   pull_request:
     branches: [ main ]
 
-env:
+#env:
   #IMAGE_NAME: ${secrets.IMAGE_NAME_ALL}
-  ENV_TEST: "testvalue"
+  #ENV_TEST: "testvalue"
   # Use docker.io for Docker Hub if empty
   #REGISTRY: docker.io
   # github.repository as <account>/<repo>
@@ -32,9 +32,9 @@ jobs:
       
     steps:
     - uses: actions/checkout@v3
-    - name: testvar
-      run: | 
-        echo  ${ENV_TEST}
+    #- name: testvar
+      #run: | 
+        #echo  ${ENV_TEST}
     - name: set value
       id: step_one
       run: |
