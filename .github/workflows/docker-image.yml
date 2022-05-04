@@ -24,6 +24,9 @@ jobs:
       #run: docker build . --file Dockerfile --tag ${{ secrets.Image_Name_All }}:$(date +%s)
      - name: Use the value
        id: step_two
-       run: |
-         echo "${{ env.action_state }}" # This will output 'yellow'
+     - name: Set Environment Variables
+       uses: ./.github/actions/setvars
+       with:
+         varFilePath: ./.github/variables/myvars.env
+       
       
