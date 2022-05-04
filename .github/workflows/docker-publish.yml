@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Set the value
+    - name: Set the name
       id: step_one
       run: |
         echo "action_state=yellow" >> $GITHUB_ENV
