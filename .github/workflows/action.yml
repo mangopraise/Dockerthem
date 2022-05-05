@@ -29,8 +29,8 @@ jobs:
   steps:
   - name: Set Environment Variables
   uses: tw3lveparsecs/github-actions-setvars@v0.1
-  with:
-    envFilePath: ./drop/.github/variables/vars.env
-     - run: |
+    with:
+        envFilePath: ./drop/.github/variables/vars.env
+  run: |
           sed "" ${{ inputs.varFilePath }} >> $GITHUB_ENV
-      shell: bash
+       
