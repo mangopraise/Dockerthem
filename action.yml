@@ -1,4 +1,4 @@
-name: 'Set environment variables'
+name: 'Set environment variable'
   uses: tw3lveparsecs/github-actions-set-variables@v0.1
 description: 'Configures environment variables for a workflow'
 inputs:
