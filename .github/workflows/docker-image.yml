@@ -13,22 +13,19 @@ on:
 
 
 jobs:
+  deploy:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Environment Variables
+        uses: ./.github/actions/setvars
+        with:
+          varFilePath: ./.github/variables/myvars.env
 
   build:
-
-    runs-on: ubuntu-latest
-
+  runs-on: ubuntu-latest
     steps:
-      deploy:
-        if: ${{ github.ref == 'refs/heads/master' }}
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-          - name: Set Environment Variables
-            uses: ./.github/actions/setvars
-            with:
-              varFilePath: ./.github/variables/myvars.env
-
     - name: display vars
       run: |
         echo $GITHUB_ENV.MYVAR1
