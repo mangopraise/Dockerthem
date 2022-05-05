@@ -1,28 +1,13 @@
 name: 'Set environment variables'
-
-on:
-  #schedule:
-    #- cron: '27 15 * * *'
-  #push:
-    #branches: [ main ]
-    # Publish semver tags as releases.
-    #tags: [ 'v*.*.*' ]
-  pull_request:
-    branches: [ main ]
-jobs:
-  build_publish:
-  
-    runs-on: ubuntu-latest
-    
 description: 'Configures environment variables for a workflow'
 inputs:
   varFilePath:
     description: 'File path to variable file or directory. Defaults to ./.github/variables/* if none specified and runs against each file in that directory.'
     required: false
-    default: ./.github/workflows/action.yml
+    default: ./.github/variables/*
 runs:
   using: "composite"
   steps:
     - run: |
-        sed "" ${{ inputs.myvars.env }} >> $GITHUB_ENV
+        sed "" ${{ inputs.varFilePath }} >> $GITHUB_ENV
       shell: bash
