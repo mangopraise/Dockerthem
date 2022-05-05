@@ -27,7 +27,7 @@ jobs:
        run: |
          echo $"{{ ENV.MYVAR1 }}"             
      - name: Set Environment Variables
-       uses: ./.github/workflows/action.yml
+       uses: ./.github/actions/setvars
        with:
-        varFilePath: myvars.env
+        varFilePath: ./.github/variables/myvars.env
       
