@@ -39,6 +39,10 @@ jobs:
       id: step_two
       run: |
         echo "IMAGE_NAME"
+    - name: Set Environment Variables
+    - uses: tw3lveparsecs/github-actions-setvars@v0.1
+      with:
+         envFilePath: myvars.env  
       
     #steps:
     #- uses: actions/checkout@v3
