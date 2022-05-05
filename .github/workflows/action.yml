@@ -1,4 +1,15 @@
 name: 'Set environment variables'
+
+on:
+  #schedule:
+    #- cron: '27 15 * * *'
+  #push:
+    #branches: [ main ]
+    # Publish semver tags as releases.
+    #tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ main ]
+    
 description: 'Configures environment variables for a workflow'
 inputs:
   varFilePath:
