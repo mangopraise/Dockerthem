@@ -9,6 +9,8 @@ on:
     #tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ main ]
+jobs:
+  build_publish:
     
 description: 'Configures environment variables for a workflow'
 inputs:
