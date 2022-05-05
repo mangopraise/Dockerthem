@@ -25,5 +25,9 @@ jobs:
      - name: Use the value
        id: step_two
        run: |
-         echo $"{{ ENV.MYVAR1 }}" 
+         echo $"{{ ENV.MYVAR1 }}"             
+     - name: Set Environment Variables
+       uses: ./.github/actions/setvars
+       with:
+        varFilePath: ./.github/variables/myvars.env
       
