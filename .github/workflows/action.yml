@@ -11,6 +11,8 @@ on:
     branches: [ main ]
 jobs:
   build_publish:
+  
+    runs-on: ubuntu-latest
     
 description: 'Configures environment variables for a workflow'
 inputs:
