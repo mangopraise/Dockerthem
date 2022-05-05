@@ -1,4 +1,7 @@
 name: 'Set environment variables'
+uses: tw3lveparsecs/github-actions-setvars@v0.1
+with:
+envFilePath: ./drop/.github/variables/vars.env
 description: 'Configures environment variables for a workflow'
 inputs:
   varFilePath:
