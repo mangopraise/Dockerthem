@@ -30,4 +30,10 @@ jobs:
       uses: ./.github/actions/setvars
       with:
           varFilePath: ./.github/variables/myvars.env
+
+    - name: display vars
+      uses: actions/checkout@v3
+      run: |
+        echo ${{MYVAR1}}
+        echo ${{MYVAR2}}       
       
