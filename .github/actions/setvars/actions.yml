@@ -1,3 +1,7 @@
+deploy:
+  if: ${{ github.ref == 'refs/heads/master' }}
+  needs: build
+  runs-on: ubuntu-latest
 name: 'Set environment variables'
 description: 'Configures environment variables for a workflow'
 inputs:
