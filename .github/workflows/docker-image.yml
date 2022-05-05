@@ -4,11 +4,11 @@ name: Docker Image CI
 on:
   #schedule:
     #- cron: '27 15 * * *'
-  #push:
+  push:
     #branches: [ main ]
     # Publish semver tags as releases.
     #tags: [ 'v*.*.*' ]
-  pull_request:
+  #pull_request:
     branches: [ main ]
 
 
@@ -19,17 +19,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    #- uses: actions/checkout@v3
-    #- name: Build the Docker image
-      #run: docker build . --file Dockerfile --tag ${{ secrets.Image_Name_All }}:$(date +%s)
-     #- name: Use the value
-       #id: step_two
-       #run: |
-         #echo $"{{ ENV.MYVAR1 }}"             
-    - name: Set Environment Variables
-      uses: ./.github/actions/setvars
-      with:
-          varFilePath: ./.github/variables/myvars.env
+      deploy:
+        if: ${{ github.ref == 'refs/heads/master' }}
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+          - name: Set Environment Variables
+            uses: ./.github/actions/setvars
+            with:
+              varFilePath: ./.github/variables/myvars.env
 
     - name: display vars
       run: |
