@@ -24,7 +24,7 @@ jobs:
           varFilePath: ./.github/variables/myvars.env
 
   build:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: display vars
       run: |
