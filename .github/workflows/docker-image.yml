@@ -13,12 +13,11 @@ on:
 
 
 jobs:
-  write:
-    runs-on: ubuntu-latest
-    steps:
-      - name: test
-        run: | 
-          echo $IMAGE_NAME
-        env: 
-           ${{ seccrets.IMAGE_NAME}}
+   runs-on: ubuntu-latest
+   steps:
+     - name: Test
+       run: | 
+         echo $IMAGE_NAME
+       env: 
+        IMAGE_NAME: ${{ seccrets.IMAGE_NAME }}
       
