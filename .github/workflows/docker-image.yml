@@ -33,6 +33,6 @@ jobs:
 
     - name: display vars
       run: |
-        echo $GITHUB_ENV.MYVAR1
-        echo $GITHUB_ENV.MYVAR2       
+        echo ${{ MYVAR1.ENV }}
+        echo ${{ MYVAR2 }}       
       
