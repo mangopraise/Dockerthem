@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: test
         run: | 
-          echo $
+          echo $IMAGE_NAME
         env: 
            ${{ seccrets.IMAGE_NAME}}
       
