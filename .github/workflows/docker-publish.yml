@@ -20,7 +20,7 @@ env:
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
   #IMAGE_NAME: ${{ github.repository }}
-  IMAGE_NAME: mangopraise/hellojason
+  IMAGE_NAME: mangopraise/2022
   TAG: today
   
 
